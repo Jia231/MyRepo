@@ -23,7 +23,8 @@ render(
     <Router>
         <Route path='/' component={MainApp}>
             <IndexRoute component={Home}/>
-            <Route path="Search" component={ContactsAppContainer}></Route>
+            <Route path="Search" component={ContactsAppContainer}>
+            </Route>
         </Route>
     </Router>
     , document.getElementById('root'));
