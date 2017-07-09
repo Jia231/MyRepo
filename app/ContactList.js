@@ -9,10 +9,10 @@ class ContactList extends Component{
            //console.log(contact.name.indexOf(this.props.thisIsTheFilter))
             contact.name.toLowerCase().indexOf(this.props.thisIsTheFilter) !== -1 )
             //console.log(filteredPerson)
-        let persons = filteredPerson.map((contact,contactIndex)=>{
-           console.log(contactIndex)
+        let persons = filteredPerson.map((contact)=>{
+           //console.log(`This is the Contact List index ${contactIndex}`)
             return(
-            <ContactItem key={contactIndex} name={contact.name} email={contact.email}/>
+            <ContactItem id={contact.id} name={contact.name} email={contact.email}/>
             )   
         })
         //console.log(`this are the ${persons}`)

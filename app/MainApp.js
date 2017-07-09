@@ -4,7 +4,9 @@ import {Router,Route,Link,IndexRoute} from 'react-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import Home from './Home';
 import ContactsAppContainer from './ContactsAppContainer';
-
+import App from './App';
+import NewContact from './NewContact';
+import EditContact from './EditContact';
 class MainApp extends Component{
 
 
@@ -20,10 +22,13 @@ class MainApp extends Component{
 
 
 render(
-    <Router>
+    <Router history={createBrowserHistory()}>
         <Route path='/' component={MainApp}>
             <IndexRoute component={Home}/>
-            <Route path="Search" component={ContactsAppContainer}>
+            <Route component={ContactsAppContainer}>
+                <Route path="Search" component={App} />
+                <Route path="new" component={NewContact} />
+                <Route path="edit/:contact_id" component={EditContact} />
             </Route>
         </Route>
     </Router>

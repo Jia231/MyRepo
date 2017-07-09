@@ -18,7 +18,8 @@ class App extends Component {
       this.setState({filterText:text})
   }
   render(){
-    
+    console.log(`this is the contacts props in App`);
+    console.log(this.props.contacts)
     return (
       <div>
         <SearchBox filterBy={this.handleFilter}/>
